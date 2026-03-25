@@ -1,0 +1,142 @@
+.hero {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  animation: fadeInUp 0.7s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+/* 24-hour service badge */
+.serviceBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 22px;
+  background: linear-gradient(135deg,
+    rgba(27, 94, 59, 0.3),
+    rgba(27, 94, 59, 0.15)
+  );
+  border: 1.5px solid var(--color-primary);
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-primary-light);
+  margin-bottom: 12px;
+  animation: pulseService 2.5s ease-in-out infinite;
+}
+
+.serviceBadgeIcon {
+  font-size: 1rem;
+}
+
+.subtitleAr {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.02em;
+}
+
+.titleAr {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Flavor tagline below name */
+.flavorText {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-accent-gold-light);
+  margin-top: 4px;
+  padding: 6px 20px;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: var(--radius-full);
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.dividerDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent-gold);
+}
+
+.dividerLine {
+  width: 60px;
+  height: 1.5px;
+  background: linear-gradient(90deg,
+    var(--color-accent-gold),
+    var(--color-accent-gold-light),
+    var(--color-accent-gold)
+  );
+}
+
+.titleEn {
+  font-family: var(--font-english);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-accent-gold);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.tagline {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+.badge {
+  margin-top: 12px;
+  background: linear-gradient(135deg,
+    rgba(212, 175, 55, 0.15),
+    rgba(212, 175, 55, 0.08)
+  );
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: var(--radius-full);
+  padding: 8px 28px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-accent-gold);
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px 4px rgba(212, 175, 55, 0.12);
+  }
+}
+
+@keyframes pulseService {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(27, 94, 59, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 16px 3px rgba(27, 94, 59, 0.2);
+  }
+}
