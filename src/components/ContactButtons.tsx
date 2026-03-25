@@ -3,6 +3,7 @@ import styles from './ContactButtons.module.css';
 const PHONE_NUMBERS = [
   { number: '+96597595693', label: 'اتصال هاتفي مباشر' },
   { number: '+96597595695', label: 'اتصال هاتفي مباشر' },
+  { number: '+96566706904', label: 'اتصال هاتفي مباشر' },
 ];
 
 export default function ContactButtons() {
