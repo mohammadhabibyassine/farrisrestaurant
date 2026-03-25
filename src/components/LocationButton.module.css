@@ -3,15 +3,13 @@
 }
 
 .locationCard {
-  border-color: rgba(66, 133, 244, 0.25);
+  border-color: var(--color-border);
   position: relative;
 }
 
 .locationCard:hover {
-  border-color: rgba(66, 133, 244, 0.55);
-  box-shadow:
-    0 12px 40px rgba(0, 0, 0, 0.4),
-    0 0 25px rgba(66, 133, 244, 0.15);
+  border-color: var(--color-border-hover);
+  box-shadow: var(--shadow-card-hover);
 }
 
 .mapIcon {
@@ -22,8 +20,8 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  background: rgba(234, 67, 53, 0.12);
-  color: #EA4335;
+  background: rgba(200, 16, 46, 0.08);
+  color: var(--color-accent-red);
   position: relative;
 }
 
@@ -35,7 +33,7 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  border: 2px solid rgba(234, 67, 53, 0.3);
+  border: 2px solid rgba(200, 16, 46, 0.2);
   animation: locationPulse 2.5s ease-out infinite;
   opacity: 0;
 }
@@ -43,7 +41,7 @@
 .mapSub {
   display: block;
   font-size: 0.85rem;
-  color: rgba(245, 240, 232, 0.5);
+  color: var(--color-text-muted);
   margin-top: 2px;
 }
 

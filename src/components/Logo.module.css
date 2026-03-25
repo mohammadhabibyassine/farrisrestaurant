@@ -12,8 +12,8 @@
   height: 160px;
   border-radius: 50%;
   background: radial-gradient(circle,
-    rgba(212, 175, 55, 0.12) 0%,
-    rgba(27, 94, 59, 0.08) 50%,
+    rgba(200, 16, 46, 0.06) 0%,
+    rgba(200, 16, 46, 0.03) 50%,
     transparent 70%
   );
   animation: pulseRing 3s ease-in-out infinite;
@@ -23,25 +23,20 @@
   width: 130px;
   height: 130px;
   border-radius: 50%;
-  background: linear-gradient(135deg,
-    rgba(27, 94, 59, 0.2),
-    rgba(212, 175, 55, 0.1)
-  );
-  border: 2px solid rgba(212, 175, 55, 0.3);
+  background: #FFFFFF;
+  border: 2px solid var(--color-border);
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   overflow: hidden;
   position: relative;
   z-index: 1;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 .logoImage {
   object-fit: contain;
   padding: 8px;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
 }
 
 @keyframes fadeInScale {

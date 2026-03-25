@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--color-bg-deep);
+  background-color: #FFFFFF;
   z-index: 9999;
   display: flex;
   align-items: center;
@@ -30,9 +30,9 @@
 .titleAr {
   font-size: 2.8rem;
   font-weight: 900;
-  color: var(--color-text-primary);
+  color: #1A1A1A;
   margin: 0;
-  background: linear-gradient(90deg, #fff, var(--color-accent-gold), #fff);
+  background: linear-gradient(90deg, #1A1A1A, #C8102E, #1A1A1A);
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
@@ -44,7 +44,7 @@
   font-family: var(--font-english);
   font-size: 1rem;
   font-weight: 600;
-  color: var(--color-accent-gold);
+  color: #888888;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   margin-top: -8px;
@@ -63,7 +63,7 @@
 .loaderBar {
   width: 100%;
   height: 2px;
-  background: rgba(212, 175, 55, 0.1);
+  background: rgba(200, 16, 46, 0.1);
   position: relative;
   overflow: hidden;
   border-radius: 2px;
@@ -76,14 +76,14 @@
   left: 0;
   height: 100%;
   width: 30%;
-  background: var(--color-accent-gold);
-  box-shadow: 0 0 10px var(--color-accent-gold);
+  background: #C8102E;
+  box-shadow: 0 0 10px rgba(200, 16, 46, 0.3);
   animation: loaderProgress 1.5s ease-in-out infinite;
 }
 
 .loaderText {
   font-size: 0.85rem;
-  color: var(--color-text-muted);
+  color: #888888;
   font-weight: 500;
   letter-spacing: 0.05em;
 }
