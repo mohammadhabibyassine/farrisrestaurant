@@ -28,6 +28,12 @@
   box-shadow: var(--shadow-card);
 }
 
+.menuButton,
+.closeButton {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
 .menuButton::before {
   content: '';
   position: absolute;

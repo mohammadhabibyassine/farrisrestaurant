@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, type MouseEvent } from 'react';
 import styles from './MenuButton.module.css';
 
 /* ─── Types ─── */
@@ -17,8 +17,15 @@ interface MenuCategory {
 }
 
 /* ─── Price formatter: strips trailing ".000" but keeps meaningful decimals ─── */
+function isIntegerFallback(value: number): boolean {
+  if (typeof Number.isInteger === 'function') {
+    return Number.isInteger(value);
+  }
+  return Math.floor(value) === value;
+}
+
 function formatPrice(raw: number): string {
-  if (Number.isInteger(raw)) return String(raw);
+  if (isIntegerFallback(raw)) return String(raw);
   const s = raw.toFixed(3);           // always 3 decimal places first
   return s.replace(/0+$/, '');        // strip trailing zeros after decimal
 }
@@ -204,10 +211,26 @@ const MENU_DATA: MenuCategory[] = [
 
 export default function MenuButton() {
   const [isOpen, setIsOpen] = useState(false);
+  const [openedAt, setOpenedAt] = useState(0);
 
   const handleClose = useCallback(() => {
     setIsOpen(false);
   }, []);
+
+  const handleOpen = useCallback(() => {
+    setOpenedAt(Date.now());
+    setIsOpen(true);
+  }, []);
+
+  const handleOverlayClick = useCallback(
+    (e: MouseEvent<HTMLDivElement>) => {
+      // Guard against delayed "ghost click" taps on older devices.
+      if (e.target !== e.currentTarget) return;
+      if (Date.now() - openedAt < 350) return;
+      handleClose();
+    },
+    [handleClose, openedAt]
+  );
 
   /* Lock body scroll when modal is open */
   useEffect(() => {
@@ -235,8 +258,9 @@ export default function MenuButton() {
   return (
     <>
       <button
+        type="button"
         className={styles.menuButton}
-        onClick={() => setIsOpen(true)}
+        onClick={handleOpen}
         aria-label="قائمة الطعام والأسعار"
       >
         <div className={styles.menuButtonIcon}>
@@ -253,7 +277,7 @@ export default function MenuButton() {
       </button>
 
       {isOpen && (
-        <div className={styles.overlay} onClick={handleClose}>
+        <div className={styles.overlay} onClick={handleOverlayClick}>
           <div
             className={styles.modal}
             onClick={(e) => e.stopPropagation()}
@@ -270,6 +294,7 @@ export default function MenuButton() {
                 قائمة الطعام
               </h2>
               <button
+                type="button"
                 className={styles.closeButton}
                 onClick={handleClose}
                 aria-label="إغلاق"

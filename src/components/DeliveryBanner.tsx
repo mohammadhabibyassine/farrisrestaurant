@@ -10,8 +10,7 @@ export default function DeliveryBanner() {
         </svg>
       </div>
       <div className={styles.content}>
-        <h3 className={styles.title}>خدمة التوصيل مجاناً</h3>
-        <p className={styles.subtitle}>توصيل لجميع مناطق الكويت</p>
+        <h3 className={styles.title}>توصيل مجاني</h3>
       </div>
       <div className={styles.location}>
         <p>جمعية الصليبية التعاونية - قطعة ٨ - فرع ٨</p>

@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 import styles from './LoadingScreen.module.css';
 
 export default function LoadingScreen() {
@@ -9,16 +8,18 @@ export default function LoadingScreen() {
   const [isFading, setIsFading] = useState(false);
 
   useEffect(() => {
-    // Simulate a minimum loading time for the splash screen effect
-    const timer = setTimeout(() => {
+    const fadeTimer = window.setTimeout(() => {
       setIsFading(true);
-      // Remove from DOM after fade animation completes
-      setTimeout(() => {
-        setIsVisible(false);
-      }, 800);
     }, 500);
 
-    return () => clearTimeout(timer);
+    const hideTimer = window.setTimeout(() => {
+      setIsVisible(false);
+    }, 1300);
+
+    return () => {
+      window.clearTimeout(fadeTimer);
+      window.clearTimeout(hideTimer);
+    };
   }, []);
 
   if (!isVisible) return null;

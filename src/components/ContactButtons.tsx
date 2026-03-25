@@ -6,12 +6,16 @@ const PHONE_NUMBERS = [
   { number: '+96566706904', label: 'اتصال هاتفي مباشر' },
 ];
 
+function getDisplayNumber(number: string): string {
+  return number.replace(/^\+965/, '');
+}
+
 export default function ContactButtons() {
   return (
     <section className={`section stagger-children ${styles.section}`}>
       <h2 className="section-title">اتصل بنا</h2>
 
-      {PHONE_NUMBERS.map((phone, idx) => (
+      {PHONE_NUMBERS.map((phone) => (
         <a
           key={`phone-${phone.number}`}
           href={`tel:${phone.number}`}
@@ -24,13 +28,13 @@ export default function ContactButtons() {
             </svg>
           </div>
           <div className="card-content">
-            <span className="card-label">{phone.label}</span>
+            <span className="card-label">اتصال: {getDisplayNumber(phone.number)}</span>
           </div>
           <span className="card-arrow">‹</span>
         </a>
       ))}
 
-      {PHONE_NUMBERS.map((phone, idx) => (
+      {PHONE_NUMBERS.map((phone) => (
         <a
           key={`wa-${phone.number}`}
           href={`https://wa.me/${phone.number.replace('+', '')}`}
@@ -45,7 +49,7 @@ export default function ContactButtons() {
             </svg>
           </div>
           <div className="card-content">
-            <span className="card-label">واتساب الطلبات</span>
+            <span className="card-label">واتساب الطلبات: {getDisplayNumber(phone.number)}</span>
           </div>
           <span className="card-arrow">‹</span>
         </a>
