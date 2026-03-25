@@ -8,9 +8,6 @@ export default function Footer() {
       <div className={styles.divider} />
       <p className={styles.brand}>مطعم فارس</p>
       <p className={styles.brandEn}>FARRIS RESTAURANT</p>
-      <p className={styles.copyright}>
-        © {currentYear} جميع الحقوق محفوظة
-      </p>
     </footer>
   );
 }

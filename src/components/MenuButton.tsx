@@ -16,18 +16,9 @@ interface MenuCategory {
   items: MenuItem[];
 }
 
-/* ─── Price formatter: strips trailing ".000" but keeps meaningful decimals ─── */
-function isIntegerFallback(value: number): boolean {
-  if (typeof Number.isInteger === 'function') {
-    return Number.isInteger(value);
-  }
-  return Math.floor(value) === value;
-}
-
+/* ─── Kuwaiti Dinar format: always 3 decimal places ─── */
 function formatPrice(raw: number): string {
-  if (isIntegerFallback(raw)) return String(raw);
-  const s = raw.toFixed(3);           // always 3 decimal places first
-  return s.replace(/0+$/, '');        // strip trailing zeros after decimal
+  return raw.toFixed(3);
 }
 
 /* ─── Full menu data extracted from menu images ─── */
@@ -161,7 +152,7 @@ const MENU_DATA: MenuCategory[] = [
       { nameAr: 'تكة دجاج', nameEn: 'Chicken Tikka', price: formatPrice(0.75) },
       { nameAr: 'تكة لحم', nameEn: 'Beef Tikka', price: formatPrice(0.75) },
       { nameAr: 'دجاج ٦٥', nameEn: 'Chicken 65', price: formatPrice(0.75) },
-      { nameAr: 'بطاط شبس', nameEn: 'Chips', price: '0.35 / 0.6' },
+      { nameAr: 'بطاط شبس', nameEn: 'Chips', price: '0.350 / 0.600' },
     ],
   },
 
@@ -188,7 +179,7 @@ const MENU_DATA: MenuCategory[] = [
     titleEn: 'Hot Drinks',
     items: [
       { nameAr: 'نسكفي', nameEn: 'Coffee', price: formatPrice(0.15) },
-      { nameAr: 'رويال كرك', nameEn: 'Royal Karak', price: '0.25 / 0.4' },
+      { nameAr: 'رويال كرك', nameEn: 'Royal Karak', price: '0.250 / 0.400' },
       { nameAr: 'شاي حليب', nameEn: 'Tea Milk', price: formatPrice(0.15) },
       { nameAr: 'شاي سادة', nameEn: 'Black Tea', price: formatPrice(0.1) },
       { nameAr: 'نسكفي سادة', nameEn: 'Black Coffee', price: formatPrice(0.15) },
