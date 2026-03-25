@@ -16,7 +16,7 @@ export default function LoadingScreen() {
       setTimeout(() => {
         setIsVisible(false);
       }, 800);
-    }, 2000);
+    }, 500);
 
     return () => clearTimeout(timer);
   }, []);
