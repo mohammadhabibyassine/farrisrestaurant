@@ -21,9 +21,9 @@ export default function HeroSection() {
         <span className={styles.dividerDot} />
       </div>
       <p className={styles.titleEn}>FARRIS RESTAURANT</p>
-      <p className={styles.tagline}>أصل الطبخ العراقي في الكويت</p>
+      <p className={styles.tagline}>المذاق  على أصوله</p>
       <div className={styles.badge}>
-        <span>اكل ولا بيات !</span>
+        <span>نكهة لا تقاوم</span>
       </div>
     </div>
   );

@@ -10,7 +10,7 @@ import LoadingScreen from '@/components/LoadingScreen';
 export default function Home() {
   return (
     <>
-      <LoadingScreen />
+      {/* <LoadingScreen /> */}
       <main className="page-container">
         <Logo />
         <HeroSection />
