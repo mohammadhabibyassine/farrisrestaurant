@@ -6,7 +6,7 @@ export default function SocialLinks() {
       <h2 className="section-title">تابعنا</h2>
 
       <a
-        href="https://www.instagram.com/farris_restaurant"
+        href="https://www.instagram.com/farrisrestaurant?igsh=bmtqMWhvMDluOHVr"
         target="_blank"
         rel="noopener noreferrer"
         className="glass-card glass-card--instagram animate-fade-in-up"
@@ -26,7 +26,7 @@ export default function SocialLinks() {
       </a>
 
       <a
-        href="https://www.tiktok.com/@farris_restaurant"
+        href="https://www.tiktok.com/@farrisrestaurant?_r=1&_t=ZS-94yBrgN7xcf"
         target="_blank"
         rel="noopener noreferrer"
         className="glass-card glass-card--tiktok animate-fade-in-up"
