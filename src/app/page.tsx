@@ -3,6 +3,7 @@ import HeroSection from '@/components/HeroSection';
 import MenuButton from '@/components/MenuButton';
 import ContactButtons from '@/components/ContactButtons';
 import SocialLinks from '@/components/SocialLinks';
+import LocationButton from '@/components/LocationButton';
 import DeliveryBanner from '@/components/DeliveryBanner';
 import Footer from '@/components/Footer';
 import LoadingScreen from '@/components/LoadingScreen';
@@ -17,6 +18,7 @@ export default function Home() {
         <MenuButton />
         <ContactButtons />
         <SocialLinks />
+        <LocationButton />
         <DeliveryBanner />
         <Footer />
       </main>
